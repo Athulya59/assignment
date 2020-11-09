@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Admin</title>
+		<link href= "/public/assets/admin_style.css" rel="stylesheet" type="text/css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body style="background-color:#e6f2ff;font:arial">
+		<!--style="position:fixed;float:center;margin:auto;background-color: #f1f1f1;padding: 20px;"-->
+		
+		<hr>
+		<p><%= print %></p>
+		<h3  id="E1" ><u>IMAGE DATA</u></h3>
+		<p>Fill only the required fields. Leave the remaining fields blank.</p>
+		<p>NOTE : Maintain the formats while entering the details !!! </p>
+		<form class="signup" action="/submit-image-data" method="post">
+			Image Name[This a compulsory field]:
+			<br>
+			<input class="sub" type="text" name="name" required>
+			<br>
+			<br>
+			ISO Setting[Enter an integer value]:
+			<br>
+			<input class="sub" type="text" name="iso">
+			<br>
+			<br>
+			Resolution[Format to enter example: 256X256 ]:
+			<br>
+			<input class="sub"  type="text" name="reso">
+			<br>
+			<br>
+			Pixel Depth[Enter an integer value]: 
+			<br>
+			<input  class="sub" type="text" name="pixeldepth">
+			<br>
+			<br>
+			Exposure[Format to enter example: 1/30 ]:
+			<br>
+			<input  class="sub" type="text" name="exposure">
+			<br>
+			<br>
+			Camera Setting:
+			<br>
+			<select class="sub" name="setting">
+				<option>Program(P)</option>
+				<option>Shutter Priority(Tv/S)</option>
+				<option>Aperture Priority(Av/A)</option>
+				<option>Manual(M)</option>
+			</select>
+			<br>
+			<br>
+			Camera Type:
+			<br>
+			<select class="sub" name="type">
+				<option>Compact Cameras</option>
+				<option>DSLR Cameras</option>
+				<option>Mirrorless Cameras</option>
+				<option>360 Cameras</option>
+				<option>Medium Format Cameras</option>
+				<option>Traditional Film Cameras</option>
+			</select>
+			<br>
+			<br>
+			<input class="btn" type="submit" name="sub1" value="Submit">
+		</form>
+
+	</body>
+</html>

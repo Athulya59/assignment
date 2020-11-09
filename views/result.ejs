@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+<title>Image Metadata Management System</title>
+ 
+ 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href= "/public/assets/style.css" rel="stylesheet" type="text/css" />
+</head>
+ 
+    <body style="background-image: linear-gradient( #ffffe6,#b3daff);font:arial;margin-left: 20px;">
+        <!--style="position:fixed;float:center;margin:auto;background-color: #f1f1f1;padding: 20px;"-->
+        
+    
+        <p>The images matching your search are</p>
+        <% res.forEach(function(res){ %>
+            <br>
+            <ul>Image Name : <%= res.Name %></ul>
+            <br>
+            <% if(res.ISO) { %>
+                <li>ISO : <%= res.ISO %></li>
+            <% } %>
+            <% if(res.Resolution) { %>
+                <li>Resolution : <%= res.Resolution %></li>
+            <% } %>
+            <% if(res.Pixel) { %>
+                <li>Pixel depth : <%= res.Pixel %></li>
+            <% } %>
+            <% if(res.Exposure) { %>
+                <li>Exposure : <%= res.Exposure %></li>
+            <% } %>
+            <% if(res.Setting) { %>
+                <li>Camera Setting : <%= res.Setting %></li>
+            <% } %>
+            <% if(res.Type) { %>
+                <li>Camera type : <%= res.Type %></li>
+            <% } %>
+        <% }) %>
+        
+                
+        <br>
+        <br>
+        <br>
+        <br>
+            
+            
+        <div class="container" >
+            <div style="display:inline-block;left:0%;position:relative;">
+            </div>
+            <div style="overflow:hidden;display:inline-block;left:5%;position:relative; margin:10px">
+            </div>
+        </div>
+    
+        
+        
+    </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>User</title>
+		<link href= "/public/assets/admin_style.css" rel="stylesheet" type="text/css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body style="background-color:#e6f2ff;font:arial">
+
+        <h3  id="E1" ><u>IMAGE SEARCH</u></h3>
+        
+        <h3>NOTE!!!</h3>
+        <p>Choose none for features that you don't want to consider while searching for the image. Only choose properties that you want to consider.</p>
+        <p>If your features you are looking for is not present in th the dropdown, then there is no image corresponding to that in the database.</p>
+        <form class="signup" action="/submit-search-data" method="post">
+
+           
+            <label for="iso">Choose ISO:</label>
+            <% var iso=[]; %>
+            <% features.forEach(function(features){ %>
+                <% if(features.ISO) { %>
+                    <% iso.push(features.ISO); %>
+                <% } %>
+            <% }); %>
+            <% var unique_iso = iso.filter((v, i, a) => a.indexOf(v) === i);  %>
+            <select name="iso">
+                <option>None</option>
+                <% unique_iso.forEach(function(element){ %>
+                    <option><%= element %></option>
+                <% }); %>
+            </select>
+
+            <br><br>
+
+
+            <label for="reso">Choose Resolution:</label>
+            <% var reso=[]; %>
+            <% features.forEach(function(features){ %>
+                <% if(features.Resolution) { %>
+                    <% reso.push(features.Resolution); %>
+                <% } %>
+            <% }); %>
+            <% var unique_reso = reso.filter((v, i, a) => a.indexOf(v) === i);  %>
+            <select name="reso">
+                <option>None</option>
+                <% unique_reso.forEach(function(element){ %>
+                    <option><%= element %></option>
+                <% }); %>
+            </select>
+            
+            <br><br>
+                        
+            
+            <label for="pixel">Choose Pixel Depth:</label>
+            <% var pixel=[]; %>
+            <% features.forEach(function(features){ %>
+                <% if(features.Pixel) { %>
+                    <% pixel.push(features.Pixel); %>
+                <% } %>
+            <% }); %>
+            <% var unique_pixel = pixel.filter((v, i, a) => a.indexOf(v) === i);  %>
+            <select name="pixel">
+                <option>None</option>
+                <% unique_pixel.forEach(function(element){ %>
+                    <option><%= element %></option>
+                <% }); %>
+            </select>
+            
+            <br><br>
+                            
+            
+            <label for="expo">Choose exposure:</label>
+            <% var expo=[]; %>
+            <% features.forEach(function(features){ %>
+                <% if(features.Exposure) { %>
+                    <% expo.push(features.Exposure); %>
+                <% } %>
+            <% }); %>
+            <% var unique_expo = expo.filter((v, i, a) => a.indexOf(v) === i);  %>
+            <select name="expo">
+                <option>None</option>
+                <% unique_expo.forEach(function(element){ %>
+                    <option><%= element %></option>
+                <% }); %>
+            </select>
+                                    
+            <br><br>
+                                    
+            
+            <label for="setting">Choose Camera Setting:</label>
+            <% var sett=[]; %>
+            <% features.forEach(function(features){ %>
+                <% if(features.Setting) { %>
+                    <% sett.push(features.Setting); %>
+                <% } %>
+            <% }); %>
+            <% var unique_sett = sett.filter((v, i, a) => a.indexOf(v) === i);  %>
+            <select name="setting">
+                <option>None</option>
+                <% unique_sett.forEach(function(element){ %>
+                    <option><%= element %></option>
+                <% }); %>
+            </select>
+
+            <br><br>
+
+            
+            <label for="type">Choose Camera Type:</label>
+            <% var type=[]; %>
+            <% features.forEach(function(features){ %>
+                <% if(features.Type) { %>
+                    <% type.push(features.Type); %>
+                <% } %>
+            <% }); %>
+            <% var unique_type = type.filter((v, i, a) => a.indexOf(v) === i);  %>
+            <select name="type">
+                <option>None</option>
+                <% unique_type.forEach(function(element){ %>
+                    <option><%= element %></option>
+                <% }); %>
+            </select>
+
+            <br>
+            <br>
+
+            <input class="btn" type="submit" name="sub1" value="Submit">
+
+		</form>
+
+	</body>
+</html>
